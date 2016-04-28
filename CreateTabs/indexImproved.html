@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="AppModule">
+<head>
+    <title>Custom Directives</title>
+    <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../angular-1.5.0/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <section ng-controller="TabController as tab">
+        <ul class="nav nav-pills">
+            <li ng-class="{active:tab.isTabSelected(1)}">
+                <a href ng-click="tab.assignTab(1)">Description</a>
+            </li>
+            <li ng-class="{active:tab.isTabSelected(2)}">
+                <a href ng-click="tab.assignTab(2)">Specifications</a>
+            </li>
+            <li ng-class="{active:tab.isTabSelected(3)}">
+                <a href ng-click="tab.assignTab(3)">Reviews</a>
+            </li>
+        </ul>
+
+        <div class="panel" ng-show="tab.isTabSelected(1)">
+            <h4>Description </h4>
+            <p>This is the description of the product.</p>
+        </div>
+
+        <div class="panel" ng-show="tab.isTabSelected(2)">
+            <h4>Specifications </h4>
+            <p>This is the specification of the product.</p>
+        </div>
+
+        <div class="panel" ng-show="tab.isTabSelected(3)">
+            <h4>Reviews </h4>
+            <p>This is the reviews of the product.</p>
+        </div>
+
+    </section>
+
+</body>
+</html>
